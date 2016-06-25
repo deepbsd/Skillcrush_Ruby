@@ -29,6 +29,8 @@ class Blog
 
 class BlogPost < Blog
 
+    attr_accessor :title, :author, :time, :content
+
     def self.create
       post = new
       puts "Name your blog post:"
@@ -44,38 +46,6 @@ class BlogPost < Blog
       create if create_another.include? 'y'
     end
 
-    def title
-      @title
-    end
-
-    def title=(title)
-      @title = title
-    end
-
-    def author
-      @author
-    end
-
-    def author=(author)
-      @author = author
-    end
-
-    def time
-      @time
-    end
-
-    def time=(time)
-      @time = time
-    end
-
-    def content
-      @content
-    end
-
-    def content=(content)
-      @content = content
-    end
-
     def save
       BlogPost.add(self)
     end
@@ -86,4 +56,7 @@ class BlogPost < Blog
   my_blog_posts = BlogPost.all
   puts my_blog_posts
   BlogPost.publish
+
+
+
   
